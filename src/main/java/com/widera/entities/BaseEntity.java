@@ -26,4 +26,26 @@ public class BaseEntity implements Serializable {
     public Long getId() {
         return id;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj)
+            return true;
+        if(obj == null)
+            return false;
+        if(!(obj instanceof BaseEntity))
+            return false;
+
+        return this.getId() == ((BaseEntity) obj).getId();
+    }
+
+    @Override
+    public int hashCode(){
+        return this.getId().hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return "[" + getId() + "]";
+    }
 }
