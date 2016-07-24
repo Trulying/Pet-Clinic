@@ -8,12 +8,16 @@ import java.io.Serializable;
  */
 
 @MappedSuperclass
-public class BaseEntity implements Serializable {
+public abstract class BaseEntity implements Serializable {
     private final static long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", nullable = false)
     private Long id;
+
+    public BaseEntity() {
+        this.id = 0L;
+    }
 
     public BaseEntity(Long id) {
         this.id = id;
