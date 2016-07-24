@@ -11,6 +11,7 @@
 .idea/dictionaries
 .idea/vcs.xml
 .idea/jsLibraryMappings.xml
+.idea/misc.xml
 
 # Sensitive or high-churn files:
 .idea/dataSources.ids
@@ -54,3 +55,5 @@ fabric.properties
 # modules.xml
 # .idea/misc.xml 
 # *.ipr
+src/main/resources/
+src/test/
