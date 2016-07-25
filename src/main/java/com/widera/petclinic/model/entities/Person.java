@@ -24,12 +24,18 @@ public abstract class Person extends BaseEntity {
     @Embedded
     private ContactDetails contactDetails;
 
+    public Person() {
+        super();
+        name = "";
+        surname = "";
+        contactDetails = new ContactDetails();
+    }
+
     public Person(Long id, String name, String surname, ContactDetails contactDetails) {
         super(id);
         this.name = name;
         this.surname = surname;
         this.contactDetails = contactDetails;
-
     }
 
     public String getName() {
@@ -55,4 +61,5 @@ public abstract class Person extends BaseEntity {
     public void setContactDetails(ContactDetails contactDetails) {
         this.contactDetails = contactDetails;
     }
+
 }

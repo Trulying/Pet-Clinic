@@ -7,7 +7,6 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.validation.Valid;
 import javax.validation.constraints.Digits;
-import java.io.Serializable;
 
 /**
  * Created by maciek on 24.07.16.
@@ -25,6 +24,11 @@ public class ContactDetails {
     @Email
     @Column(name = "e_mail")
     private String eMail;
+
+    public ContactDetails() {
+        phoneNumber = "";
+        eMail = "";
+    }
 
     public ContactDetails(String phoneNumber, String eMail) {
         this.phoneNumber = phoneNumber.trim();
