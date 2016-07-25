@@ -1,4 +1,4 @@
-package com.widera.entities;
+package com.widera.petclinic.model.entities;
 
 import org.hibernate.validator.constraints.NotEmpty;
 

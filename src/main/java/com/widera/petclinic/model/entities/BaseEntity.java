@@ -1,4 +1,4 @@
-package com.widera.entities;
+package com.widera.petclinic.model.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
