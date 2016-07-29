@@ -57,3 +57,5 @@ fabric.properties
 # *.ipr
 src/main/resources/
 src/test/
+target/generated-sources/
+target/classes
