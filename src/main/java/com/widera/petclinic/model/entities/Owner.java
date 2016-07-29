@@ -39,7 +39,6 @@ public class Owner extends Person {
         Owner owner = (Owner) o;
 
         return pets != null ? pets.equals(owner.pets) : owner.pets == null;
-
     }
 
     @Override
