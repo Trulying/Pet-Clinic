@@ -1,11 +1,8 @@
-package com.widera.petclinic.model.entities;
+package com.widera.petclinic.domain.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
-/**
- * Created by maciek on 24.07.16.
- */
 
 @MappedSuperclass
 public abstract class BaseEntity implements Serializable {
@@ -16,7 +13,7 @@ public abstract class BaseEntity implements Serializable {
     private Long id;
 
     public BaseEntity() {
-        this.id = 0L;
+        this.id = null;
     }
 
     public BaseEntity(Long id) {
@@ -51,5 +48,11 @@ public abstract class BaseEntity implements Serializable {
     @Override
     public String toString() {
         return "[" + getId() + "]";
+    }
+
+    public boolean isNull() {
+        if(id == null)
+            return true;
+        return false;
     }
 }

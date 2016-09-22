@@ -1,4 +1,4 @@
-package com.widera.petclinic.model.entities;
+package com.widera.petclinic.domain.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Table;
