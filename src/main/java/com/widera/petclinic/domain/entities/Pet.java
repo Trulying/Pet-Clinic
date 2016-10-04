@@ -2,7 +2,9 @@ package com.widera.petclinic.domain.entities;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
@@ -11,31 +13,28 @@ import javax.validation.constraints.Min;
  */
 
 @Entity
-@Table(name = "pets")   
+@Table
 public class Pet extends BaseEntity {
 
-    @Column(name = "pet_name")
+    @Column
     @NotEmpty
     private String name;
 
-    @Column(name = "pet_age")
+    @Column
     @Max(value = 120, message = "Pet can't be older than 120 years")
     @Min(value = 0, message = "Pet can't be younger than 0 years")
     private int age;
-
-    @NotEmpty
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "pet_type_name")
-    private PetType petKind;
+    @Column
+    private String petKind;
 
     public Pet() {
         super();
         name = "Undefined";
         age = 0;
-        this.petKind = new PetType();
+        petKind = "Undefined";
     }
 
-    public Pet(String name, int age, PetType petKind) {
+    public Pet(String name, int age, String petKind) {
         this.name = name;
         this.age = age;
         this.petKind = petKind;
@@ -57,11 +56,11 @@ public class Pet extends BaseEntity {
         this.age = age;
     }
 
-    public PetType getPetKind() {
+    public String getPetKind() {
         return petKind;
     }
 
-    public void setPetKind(PetType petKind) {
+    public void setPetKind(String petKind) {
         this.petKind = petKind;
     }
 

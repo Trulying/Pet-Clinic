@@ -1,7 +1,6 @@
 package com.widera.petclinic.domain.entities;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.HashSet;
@@ -12,9 +11,9 @@ import java.util.Set;
  */
 
 @Entity
-@Table(name = "pet_owner")
+@Table
 public class Owner extends Person {
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany
     private Set<Pet> pets;
 
     public Owner() {

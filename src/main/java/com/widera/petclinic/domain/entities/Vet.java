@@ -1,9 +1,6 @@
 package com.widera.petclinic.domain.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -11,11 +8,11 @@ import java.util.List;
  * Created by maciek on 28.07.16.
  */
 @Entity
-@Table(name = "vets")
+@Table
 public class Vet extends Person {
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private List<Pet> pets;
-    @Column(name = "vet_specialism")
+    @Column
     private String specialism;
 
     public Vet() {

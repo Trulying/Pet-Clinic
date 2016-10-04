@@ -1,15 +1,13 @@
-package com.widera.petclinic.domain.repository.interfaces;
+package com.widera.petclinic.domain.repository;
 
 import com.widera.petclinic.domain.entities.Owner;
 import org.springframework.dao.DataAccessException;
-import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
 
 /**
  * Created by maciek on 30.07.16.
  */
-@Repository
 public interface OwnerRepository {
 
     Owner findById(Long id) throws DataAccessException;

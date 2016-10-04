@@ -16,13 +16,13 @@ import javax.validation.constraints.Digits;
 public class ContactDetails {
     @NotEmpty
     @Digits(fraction = 0, integer = 9) //Polish number has 9 digits
-    @Column(name = "phone_number")
+    @Column
     @Valid
     private String phoneNumber;
 
     @NotEmpty
     @Email
-    @Column(name = "e_mail")
+    @Column
     private String eMail;
 
     public ContactDetails() {

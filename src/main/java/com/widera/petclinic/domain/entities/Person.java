@@ -15,10 +15,10 @@ import javax.validation.constraints.NotNull;
 public abstract class Person extends BaseEntity {
 
     @NotEmpty
-    @Column(name = "name")
+    @Column
     private String name;
     @NotEmpty
-    @Column(name = "surname")
+    @Column
     private String surname;
     @NotNull
     @Embedded
