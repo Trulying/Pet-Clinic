@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <html>
 <head>
@@ -9,16 +10,16 @@
 </head>
 <body>
 <div class="btn-group btn-group-sm">
-    <a href="/home" class="btn btn-primary">
+    <a href="<spring:url value="/home" />" class="btn btn-primary">
         Home page
     </a>
-    <a href="/login" class="btn btn-primary">
+    <a href="<spring:url value="/login" />" class="btn btn-primary">
         Login
     </a>
-    <a href="/vets" class="btn btn-primary">
+    <a href="<spring:url value = "/vets" />" class="btn btn-primary">
         Vets
     </a>
-    <a href="/about" class="btn btn-primary">
+    <a href="<spring:url value = "/about" />" class="btn btn-primary">
         About
     </a>
 </div>
@@ -30,7 +31,7 @@
                     <div class="caption">
                         <h3>${vet.name} ${vet.surname}</h3>
                         <p>specialism: ${vet.specialism}</p>
-                        <a href="/vet?id=${vet.id}">
+                        <a href="<spring:url value="/vets/vet?id=${vet.id}" />">
                             <div class="btn btn-primary">
                                 Details
                             </div>

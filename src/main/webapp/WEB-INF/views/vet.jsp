@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <head>
     <title>Vet</title>
@@ -8,32 +9,32 @@
 </head>
 <body>
 <div class="btn-group btn-group-sm">
-    <a href="/home" class="btn btn-primary">
+    <a href="<spring:url value="/home" />" class="btn btn-primary">
         Home page
     </a>
-    <a href="/login" class="btn btn-primary">
+    <a href="<spring:url value="/login" />" class="btn btn-primary">
         Login
     </a>
-    <a href="/vets" class="btn btn-primary">
+    <a href="<spring:url value="/vets" />" class="btn btn-primary">
         Vets
     </a>
-    <a href="/about" class="btn btn-primary">
+    <a href="<spring:url value="/about" />" class="btn btn-primary">
         About
     </a>
 </div>
 <section class="container">
     <div class="row">
-            <div class="col-sm-6 col-md-3" style="padding-bottom: 15px">
+            <div class="col-md-5">
                 <div class="thumbnail">
                     <div class="caption">
                         <h3>${vet.name} ${vet.surname}</h3>
-                        <p>specialism: ${vet.specialism}</p>
+                        <p><strong>specialism:</strong> ${vet.specialism}</p>
                        <strong>
                            <p>Contact Data:</p>
                        </strong>
-                        <p>phone number: ${vetNumber}</p>
-                        <p>e-mail: ${vetMail}</p>
-                        <a href="/vets">
+                        <p><strong>phone number:</strong> ${vetNumber}</p>
+                        <p><strong>e-mail:</strong> ${vetMail}</p>
+                        <a href="<spring:url value="/vets" />">
                             <div class="btn btn-primary">
                                 Back
                             </div>
