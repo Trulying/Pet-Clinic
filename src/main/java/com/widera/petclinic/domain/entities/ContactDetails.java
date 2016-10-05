@@ -8,10 +8,6 @@ import javax.persistence.Embeddable;
 import javax.validation.Valid;
 import javax.validation.constraints.Digits;
 
-/**
- * Created by maciek on 24.07.16.
- */
-
 @Embeddable
 public class ContactDetails {
     @NotEmpty

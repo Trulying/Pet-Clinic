@@ -4,9 +4,7 @@ import javax.persistence.*;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by maciek on 28.07.16.
- */
+
 @Entity
 @Table
 public class Vet extends Person {

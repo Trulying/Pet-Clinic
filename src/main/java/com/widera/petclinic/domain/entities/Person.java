@@ -7,10 +7,6 @@ import javax.persistence.Embedded;
 import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.NotNull;
 
-/**
- * Created by maciek on 24.07.16.
- */
-
 @MappedSuperclass
 public abstract class Person extends BaseEntity {
 

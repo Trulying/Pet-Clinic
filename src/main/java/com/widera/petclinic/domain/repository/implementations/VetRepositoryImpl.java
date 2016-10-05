@@ -11,24 +11,22 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import java.util.Collection;
 
-/**
- * Created by maciek on 30.09.16.
- */
 @Repository
-@Transactional(readOnly = true)
 public class VetRepositoryImpl implements VetRepository {
 
 	@PersistenceContext
 	private EntityManager entityManager;
 
 	@Override
+	@Transactional(readOnly = true)
 	public Vet findById(Long id) throws DataAccessException {
 		return entityManager.find(Vet.class, id);
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public Collection<Vet> findAll() throws DataAccessException {
-		Query q = entityManager.createQuery("select t from Vet t");
+		Query q = entityManager.createQuery("select distinct t from Vet t");
 		return q.getResultList();
 	}
 }

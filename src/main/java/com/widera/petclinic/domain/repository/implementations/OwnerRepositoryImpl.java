@@ -11,9 +11,6 @@ import javax.persistence.Query;
 import java.util.Collection;
 
 
-/**
- * Created by macie_000 on 17.09.2016.
- */
 @Repository
 public class OwnerRepositoryImpl implements OwnerRepository {
 

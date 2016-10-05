@@ -5,9 +5,6 @@ import org.springframework.dao.DataAccessException;
 
 import java.util.Collection;
 
-/**
- * Created by maciek on 30.07.16.
- */
 public interface VetRepository {
     Vet findById(Long id) throws DataAccessException;
 

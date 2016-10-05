@@ -28,7 +28,7 @@ public class VetController {
 		return "vets";
 	}
 
-	@RequestMapping(value = "/vet", method = RequestMethod.GET)
+	@RequestMapping(value = "/vets/vet", method = RequestMethod.GET)
 	public String getVetDetailsById(Model model, @RequestParam ("id") Long vetId) {
 		Vet vet = vetService.getVetById(vetId);
 		model.addAttribute("vet", vet);

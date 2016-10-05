@@ -8,9 +8,6 @@ import javax.persistence.Table;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
-/**
- * Created by maciek on 25.07.16.
- */
 
 @Entity
 @Table
