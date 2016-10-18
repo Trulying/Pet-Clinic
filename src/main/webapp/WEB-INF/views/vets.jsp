@@ -9,20 +9,14 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
-<div class="btn-group btn-group-sm">
-    <a href="<spring:url value="/home" />" class="btn btn-primary">
-        Home page
-    </a>
-    <a href="<spring:url value="/login" />" class="btn btn-primary">
-        Login
-    </a>
-    <a href="<spring:url value = "/vets" />" class="btn btn-primary">
-        Vets
-    </a>
-    <a href="<spring:url value = "/about" />" class="btn btn-primary">
-        About
-    </a>
-</div>
+<jsp:include page="menu.jsp"/>
+
+<section class="container">
+    <div class="jumbotron">
+        <h1 class="text-center">Our vets</h1>
+    </div>
+</section>
+
 <section class="container">
     <div class="row">
         <c:forEach items="${vets}" var="vet">
