@@ -23,7 +23,8 @@ public class OwnerRepositoryImpl implements OwnerRepository {
 
     public Collection<Owner> findByLastName(String lastName) throws DataAccessException {
         Query lastNameQuery = entityManager
-                .createQuery("SELECT DISTINCT owner FROM Owner owner WHERE owner.surname=:lastName");
+                .createQuery("SELECT DISTINCT owner FROM Owner owner WHERE owner.surname=:surname")
+                .setParameter("surname", lastName);
 	    Collection<Owner> petOwners = lastNameQuery.getResultList();
 		return petOwners;
     }
