@@ -9,7 +9,7 @@ public abstract class BaseEntity implements Serializable {
     private final static long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
+    @Column(name="id")
     private Long id;
 
     public BaseEntity() {

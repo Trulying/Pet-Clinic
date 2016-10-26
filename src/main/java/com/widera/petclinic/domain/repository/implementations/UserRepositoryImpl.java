@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -15,10 +14,11 @@ public class UserRepositoryImpl implements UserRepository {
     private EntityManager em;
 
     @Override
+    @SuppressWarnings("unchecked")
     public User findUserById(String username) {
-        List<User> user = new ArrayList<>();
+        List<User> user;
 
-        user = em.createQuery("select u from User u where u.username=:user")
+        user = em.createQuery("SELECT u FROM User u WHERE u.username=:user")
                 .setParameter("user", username).getResultList();
 
         if(user.size() > 0) {

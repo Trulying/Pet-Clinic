@@ -1,3 +1,4 @@
+USE My_base;
 INSERT INTO Vet
   VALUES (1, "jmay@gmail.com", "999999999", "James", "May", "surgeon");
 INSERT INTO Vet

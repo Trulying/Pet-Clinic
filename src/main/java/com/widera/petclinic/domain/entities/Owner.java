@@ -8,7 +8,7 @@ import java.util.Set;
 
 
 @Entity
-@Table
+@Table(name = "Pet_Owner")
 public class Owner extends Person {
     @OneToMany
     private Set<Pet> pets;

@@ -1,23 +1,31 @@
 package com.widera.petclinic.domain.entities;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
+import javax.validation.constraints.Min;
+import java.math.BigInteger;
 
 @Entity
+@Table(name="User")
 public class User {
     @Id
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false, name = "user_id")
+    private Long id;
+    @Column(unique = true, nullable = false, name = "username", length = 30)
     private String username;
+    @Column(name = "password", nullable = false, length = 30)
     private String password;
+    @Column(name = "sole")
     private String sole;
+    @Column(name = "hash")
     private String hash;
+    @Column(name = "role")
     private String role;
+    @Column(name = "enabled")
     private boolean enabled;
 
     @OneToOne
+
     private Owner owner;
 
     public User() {
@@ -39,6 +47,14 @@ public class User {
         this.role = role;
         this.enabled = enabled;
         this.owner = owner;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUsername() {

@@ -17,7 +17,7 @@ import java.util.Set;
 /**
  * Created by maviek on 21.10.16.
  */
-@Service
+@Service("customUserDetailsService")
 public class UserServiceImpl implements UserDetailsService {
 
     @Autowired
@@ -25,7 +25,8 @@ public class UserServiceImpl implements UserDetailsService {
 
     @Override
     @Transactional(readOnly = true)
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String username)
+            throws UsernameNotFoundException {
         User user = userRepository.findUserById(username);
         Set<GrantedAuthority> roles = new HashSet<>();
         roles.add(new SimpleGrantedAuthority(user.getRole()));
