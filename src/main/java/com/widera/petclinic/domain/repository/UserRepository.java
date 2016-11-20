@@ -7,4 +7,5 @@ import com.widera.petclinic.domain.entities.User;
  */
 public interface UserRepository {
     User findUserById(String username);
+    void save(User user);
 }

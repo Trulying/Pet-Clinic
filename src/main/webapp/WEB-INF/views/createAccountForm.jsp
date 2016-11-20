@@ -17,13 +17,34 @@
         </div>
     </section>
 
-    <section class="well well-lg">
-        <ul>
-            <li>
+    <section class="container">
+        <form:form modelAttribute="user" class="form-horizontal">
+            <fieldset>
+                <legend>
+                    Add new user
+                </legend>
+                <div class="form-group">
+                    <label class="control-label col-lg-2 col-lg-2" for="username">Username: </label>
+                    <div class="col-lg-10">
+                        <form:input path="username" type="text" class="form:input-large"/>
+                    </div>
+                </div>
 
-            </li>
-        </ul>
+                <div class="form-group">
+                    <label class="control-label col-lg-2 col-lg-2" for="password">Password: </label>
+                    <div class="col-lg-10">
+                        <form:input path="password" type="password" class="form:input-large"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                        <input type="submit" id="btnAdd" class="btn btn-primary" value ="Create Account"/>
+                    </div>
+                </div>
+            </fieldset>
+        </form:form>
+
     </section>
-
 </body>
 </html>

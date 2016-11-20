@@ -6,9 +6,10 @@ import javax.validation.constraints.Min;
 import java.math.BigInteger;
 
 @Entity
-@Table(name="User")
+@Table(name="USER")
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, name = "user_id")
     private Long id;
     @Column(unique = true, nullable = false, name = "username", length = 30)
