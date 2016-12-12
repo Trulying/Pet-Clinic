@@ -12,10 +12,6 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-/**
- * Created by maciek on 27.09.16.
- */
-
 @Configuration
 @EnableWebMvc
 @EnableSpringDataWebSupport
@@ -31,6 +27,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
 		configurer.enable();
 	}
+
 
 	@Bean
 	public ViewResolver viewResolver() {

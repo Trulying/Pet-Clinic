@@ -14,34 +14,28 @@
 
     <section class="container">
         <div class="jumbotron">
-            <h1 style="text-align: center">login</h1>
+            <h2 style="text-align: center">
+               Login
+            </h2>
         </div>
     </section>
-    <form action="${loginUrl}" method="post">
-            <fieldset>
-                <div class="form-group">
-                    <label class="control-label col-lg-2 col-lg-2">
-                        Username:
-                    </label>
-                    <input type="text" value="">
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-lg-2 col-lg-2">
-                        Password:
-                    </label>
-                    <input type="password" value="">
-                </div>
 
-                <div class="form-group">
-                    <div class="col-lg-offset-2 col-lg-10">
-                        <input type="submit" id="btnAdd" class="btn btn-primary" value ="Login"/>
-                    </div>
-                </div>
-                <input type="hidden" name="${_csrf.parameterName}"
-                       value="${_csrf.token}" />
-            </fieldset>
-        </form>
-    <section>
+    <section id="login-form">
+        <div class="container">
+
+            <div class="jumbotron">
+
+                <form class="form-signin">
+                    <h2 class="form-signin-heading">Please sign in</h2>
+                    <label type="text" class="sr-only">Login</label>
+                    <input type="text" id="login" class="form-control" placeholder="login" required autofocus>
+                    <label for="inputPassword" class="sr-only">Password</label>
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                </form>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            </div>
+        </div>
     </section>
+
 </body>
 </html>

@@ -30,8 +30,8 @@ public class User {
     private Owner owner;
 
     public User() {
-        username = "undefined";
-        password = "undefined";
+        username = "";
+        password = "";
         sole = "undefined";
         hash = "undefined";
         role = "undefined";

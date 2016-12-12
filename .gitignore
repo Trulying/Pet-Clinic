@@ -56,7 +56,6 @@ fabric.properties
 # modules.xml
 # .idea/misc.xml 
 # *.ipr
-src/main/resources/
 src/test/
 target/generated-sources/
 target/classes

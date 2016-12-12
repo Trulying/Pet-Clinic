@@ -12,9 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Collection;
 
-/**
- * Created by maciek on 30.09.16.
- */
 @Controller
 public class VetController {
 	@Autowired

@@ -5,10 +5,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-/**
- * Created by macie_000 on 22.09.2016.
- */
-
 @Controller
 public class HomeController {
     @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)

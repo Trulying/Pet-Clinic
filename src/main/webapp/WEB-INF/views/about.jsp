@@ -16,13 +16,15 @@
         </div>
     </section>
 
-    <section class="panel panel-default">
+    <section class="container">
+    <div class="panel panel-default">
         <div class="panel-heading">
             <spring:message code="aboutUs.panel.heading"/>
         </div>
         <div class="panel-content">
             <spring:message code="aboutUs.panel.content"/>
         </div>
+    </div>
     </section>
 </body>
 </html>
