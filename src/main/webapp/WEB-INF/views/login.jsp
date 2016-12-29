@@ -24,15 +24,28 @@
         <div class="container">
 
             <div class="jumbotron">
-
-                <form class="form-signin">
+                <c:url value="/login" var="loginUrl"/>
+                <form action="${loginUrl}" method="post" class="form-signin">
+                    <c:if test="${param.error != null}">
+                        <p>
+                            Invalid username and password.
+                        </p>
+                    </c:if>
+                    <c:if test="${param.logout != null}">
+                        <p>
+                            You have been logged out.
+                        </p>
+                    </c:if>
                     <h2 class="form-signin-heading">Please sign in</h2>
-                    <label type="text" class="sr-only">Login</label>
-                    <input type="text" id="login" class="form-control" placeholder="login" required autofocus>
+                    <label type="text" for="username" class="sr-only">Login</label>
+                    <input type="text" id="username" class="form-control" placeholder="login" required autofocus>
                     <label for="inputPassword" class="sr-only">Password</label>
                     <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                    <input type="hidden"
+                           name="${_csrf.parameterName}"
+                           value="${_csrf.token}"/>
+                    <button type="submit" class="btn btn-lg btn-primary btn-block">Log in</button>
                 </form>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
             </div>
         </div>
     </section>

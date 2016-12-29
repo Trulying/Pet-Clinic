@@ -16,35 +16,26 @@ public class User {
     private String username;
     @Column(name = "password", nullable = false, length = 30)
     private String password;
-    @Column(name = "sole")
-    private String sole;
-    @Column(name = "hash")
-    private String hash;
     @Column(name = "role")
     private String role;
     @Column(name = "enabled")
     private boolean enabled;
 
     @OneToOne
-
     private Owner owner;
 
     public User() {
         username = "";
         password = "";
-        sole = "undefined";
-        hash = "undefined";
-        role = "undefined";
+        role = "USER";
         enabled = false;
         owner = null;
     }
 
-    public User(String username, String password, String sole, String hash,
-                String role, boolean enabled,Owner owner) {
+    public User(String username, String password,
+                String role, boolean enabled, Owner owner) {
         this.username = username;
         this.password = password;
-        this.sole = sole;
-        this.hash = hash;
         this.role = role;
         this.enabled = enabled;
         this.owner = owner;
@@ -72,22 +63,6 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getSole() {
-        return sole;
-    }
-
-    public void setSole(String sole) {
-        this.sole = sole;
-    }
-
-    public String getHash() {
-        return hash;
-    }
-
-    public void setHash(String hash) {
-        this.hash = hash;
     }
 
     public String getRole() {

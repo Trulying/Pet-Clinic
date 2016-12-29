@@ -14,9 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by maviek on 21.10.16.
- */
+
 @Service("customUserDetailsService")
 public class UserServiceImpl implements UserDetailsService {
 

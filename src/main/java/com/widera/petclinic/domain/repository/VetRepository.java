@@ -7,6 +7,5 @@ import java.util.Collection;
 
 public interface VetRepository {
     Vet findById(Long id) throws DataAccessException;
-
     Collection<Vet> findAll() throws DataAccessException;
 }
