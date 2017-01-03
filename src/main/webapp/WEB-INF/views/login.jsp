@@ -38,13 +38,13 @@
                     </c:if>
                     <h2 class="form-signin-heading">Please sign in</h2>
                     <label type="text" for="username" class="sr-only">Login</label>
-                    <input type="text" id="username" class="form-control" placeholder="login" required autofocus>
-                    <label for="inputPassword" class="sr-only">Password</label>
-                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                    <input type="text" id="username" class="form-control" placeholder="username" required autofocus>
+                    <label for="password" class="sr-only">Password</label>
+                    <input type="password" id="password" class="form-control" placeholder="password" required>
                     <input type="hidden"
                            name="${_csrf.parameterName}"
                            value="${_csrf.token}"/>
-                    <button type="submit" class="btn btn-lg btn-primary btn-block">Log in</button>
+                    <input type="submit" class="btn btn-lg btn-primary btn-block" value="Log in">
                 </form>
             </div>
         </div>

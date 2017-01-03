@@ -22,29 +22,25 @@ import org.springframework.web.filter.CharacterEncodingFilter;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     @Qualifier("customUserDetailsService")
-    UserDetailsService userDetailsService;
+    private UserDetailsService userDetailsService;
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+        auth.userDetailsService(userDetailsService);
+        auth.authenticationProvider(authenticationProvider());
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        CharacterEncodingFilter encodingFilter = new CharacterEncodingFilter();
-        encodingFilter.setEncoding("UTF-8");
-        encodingFilter.setForceEncoding(true);
-
-        http.addFilterBefore(encodingFilter, CsrfFilter.class);
-
         http.authorizeRequests()
-                .antMatchers("/", "/home", "/about", "/signup", "/vets/**", "/login", "/resources/**").permitAll()
+                .antMatchers("/", "/home", "/about", "/signup", "/vets/**", "/resources/**").permitAll()
                 .antMatchers("/admin/**").access("hasRole('ADMIN')")
                 .antMatchers("/user/**").access("hasRole('USER')")
-                .and().formLogin().loginPage("/login").loginProcessingUrl("/login")
-                .usernameParameter("username").passwordParameter("password")
-                .and().csrf()
-                .and().exceptionHandling().accessDeniedPage("/Access_Denied");
+                .and().formLogin()
+                .usernameParameter("username").passwordParameter("password").permitAll()
+                .and().logout().logoutSuccessUrl("/login?logout")
+                .and().exceptionHandling().accessDeniedPage("/Access_Denied")
+                .and().csrf();
     }
 
     @Bean

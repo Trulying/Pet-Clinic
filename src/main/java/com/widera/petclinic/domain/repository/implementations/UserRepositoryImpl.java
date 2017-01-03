@@ -3,7 +3,6 @@ package com.widera.petclinic.domain.repository.implementations;
 import com.widera.petclinic.domain.entities.User;
 import com.widera.petclinic.domain.repository.UserRepository;
 import org.springframework.stereotype.Repository;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
@@ -15,7 +14,7 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     @SuppressWarnings("unchecked")
-    public User findUserById(String username) {
+    public User findUserByUsername(String username) {
         List<User> user;
 
         user = em.createQuery("SELECT u FROM User u WHERE u.username=:user")

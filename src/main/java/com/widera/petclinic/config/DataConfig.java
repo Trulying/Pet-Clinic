@@ -47,7 +47,7 @@ public class DataConfig {
 	@Bean
 	public DataSource dataSource() {
 		MysqlDataSource dataSource = new MysqlDataSource();
-		dataSource.setUrl("jdbc:mysql://localhost:3306/My_base?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/my_base?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC");
 		dataSource.setUser("root");
 		dataSource.setPassword("password");
 
